@@ -15,7 +15,6 @@ namespace ArrayListLoop
                 Console.Write("Enter name if you like my post: ");
                 var name = Console.ReadLine();
 
-
                 if (name == "")
                 {
                     Console.WriteLine();
@@ -25,8 +24,6 @@ namespace ArrayListLoop
                 {
                     names.Add(name);
                 }
-
-                //Console.WriteLine(name + " likes your post.");
             }
 
             foreach (var name in names)
@@ -39,16 +36,16 @@ namespace ArrayListLoop
                     case 2:
                         Console.WriteLine(names[0] + " and " + names[1] + " like your post.");
                         break;
-                    // case > 3: Console.WriteLine(names[0] + " and " + names[1] + " likes your post.");
-                    // break;
-                    // paano ko ite-test sa switch kapag more than 3 yung nasa list? hindi ko ma-gets eh. ayaw gumana kahit yung  
-                    // case names.Count() > 3: Console.WriteLine(names[0] + " and " + names[1] + " likes your post.");
-                    // wala ko makita sa net kung pano
+                    default:
+                        var totalLikes = names.Count() - 2;
+                        Console.WriteLine(names[0] + ", " + names[1] + ", and " + totalLikes + " others like your post.");
+                        break;
                 }
+                break;
             }
-        }
-        
-    }
+        } // End of Likers method
+    } // End of Likes class
+
     class Program
     {
         static void Main(string[] args)
@@ -62,7 +59,6 @@ namespace ArrayListLoop
                 
                   Write a program and continuously ask the user to enter different names, until the user presses Enter (without supplying a name). Depending 
                   on the number of names provided, display a message based on the above pattern. */
-
             Likes likes = new Likes();
             likes.Likers();
         }
